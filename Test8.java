@@ -1,6 +1,3 @@
-package package_Test;
-
-
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
@@ -9,17 +6,19 @@ import java.awt.Font;
 import java.awt.event.*;  
 
 
-public class Test8 extends JFrame{ 
-	
+public class Test8 extends JFrame{ 	
     JLabel
     A1,A2,A3,A4,A5,A6,A7,A8,A9,
     B1,B2,B3,B4,B5,B6,B7,B8,B9,
     C1,C2,C3,C4,C5,C6,C7,C8,C9,
     D1,D2,D3,D4,D5,D6,D7,D8,D9;
-    
+    JLabel[] Aa = {A1,A2,A3,A4,A5,A6,A7,A8,A9};	
+	JLabel[] Ba = {B1,B2,B3,B4,B5,B6,B7,B8,B9};
+	JLabel[] Ca = {C1,C2,C3,C4,C5,C6,C7,C8,C9};
+	JLabel[] Da = {D1,D2,D3,D4,D5,D6,D7,D8,D9};
     JPanel panel,
     JP1,JP2,JP3,JP4; 
-    
+    String[] pattern,child,eggcake,drinks;
     Test8(){
 		setBounds(100, 100, 570, 383);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,11 +29,7 @@ public class Test8 extends JFrame{
 		panel.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		
-
-				
-		
+	
 		JP1 = new JPanel();
 		JP1.setBounds(0, 0, 138, 334);
 		panel.add(JP1);
@@ -45,7 +40,7 @@ public class Test8 extends JFrame{
 		String[] eggcake= new String[]{"手工蛋餅系列(鹹)","芋泥蛋餅系列(甜)","地瓜蜂蜜蛋餅(甜)"};
 		String[] drinks=  new String[]{"紅茶","奶茶","鮮奶茶","豆漿紅茶","無糖冷泡茶","柚子釀蜜茶","桂花釀蜜茶"};
 		
-		JLabel[] Aa = {A1,A2,A3,A4,A5,A6,A7,A8,A9};				
+			
 		int j=0;
 		for (int i=0;i<9;i++) {
 			Aa[i] = new JLabel();
@@ -53,7 +48,8 @@ public class Test8 extends JFrame{
 			Aa[i].setBounds(0, j, 138, 38);
 			j +=37;
 			JP1.add(Aa[i]);	
-		}		
+		}	
+		
 		if(Aa[0].getText()=="") {
 	    for (int i=0;i<pattern.length;i++) {
 	        Aa[i].setText(pattern[i]);
@@ -61,15 +57,15 @@ public class Test8 extends JFrame{
 			Aa[i].setFont(f);	
 			Aa[i].setForeground(Color.blue);
 			Aa[i].setHorizontalAlignment(SwingConstants.CENTER);
+			
 	    }
-		}
-
-		
+	    
+		}		
 		JP2 = new JPanel();
 		JP2.setBounds(138, 0, 138, 334);
 		panel.add(JP2);
 		JP2.setLayout(null);
-		JLabel[] Ba = {B1,B2,B3,B4,B5,B6,B7,B8,B9};
+
 		int ja = 0;
 		for (int i=0;i<9;i++) {
 			Ba[i] = new JLabel();
@@ -93,7 +89,7 @@ public class Test8 extends JFrame{
 		JP3.setBounds(276, 0, 138, 334);
 		panel.add(JP3);
 		JP3.setLayout(null);
-		JLabel[] Ca = {C1,C2,C3,C4,C5,C6,C7,C8,C9};
+
 		int jb = 0;
 		for (int i=0;i<9;i++) {
 			Ca[i] = new JLabel();
@@ -116,7 +112,7 @@ public class Test8 extends JFrame{
 		JP4.setBounds(414, 0, 138, 334);
 		panel.add(JP4);
 		JP4.setLayout(null);
-		JLabel[] Da = {D1,D2,D3,D4,D5,D6,D7,D8,D9};
+
 		int jd = 0;
 		for (int i=0;i<9;i++) {
 			Da[i] = new JLabel();
@@ -138,14 +134,18 @@ public class Test8 extends JFrame{
         setLayout(null);  
         setVisible(true);  
         setDefaultCloseOperation(EXIT_ON_CLOSE);  
-    
     }  
-    	
+	
     public void actionPerformed(ActionEvent e){
     	
 }    
  
-public static void main(String[] args) {  
-    new Test8();  
+public static void main(String[] args) { 
+	Test8 ad =new Test8();
+	System.out.println(ad.Aa[0].getText());
+	System.out.println(ad.Ba[0].getText());
+	System.out.println(ad.Ca[0].getText());
+	System.out.println(ad.Da[0].getText());
+//    new Test8();
 }  
 }  
