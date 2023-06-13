@@ -68,60 +68,59 @@ public class Menu implements ActionListener {
 		panel = new JPanel();
 		frame.getContentPane().add(panel);
 		panel.setLayout(new BorderLayout(0, 0));
-//		上方分頁------
+//		上方頁面切換按鍵範圍設定------
 		panel_1 = new JPanel();
 		panel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, SystemColor.inactiveCaption, SystemColor.inactiveCaption, SystemColor.inactiveCaption, SystemColor.inactiveCaption));
-		panel_1.setPreferredSize(new Dimension(500, 30));
+		panel_1.setPreferredSize(new Dimension(500, 45));
 		panel_1.setSize(new Dimension(500, 50));
-		panel_1.setMinimumSize(new Dimension(500, 50));
 		panel.add(panel_1, BorderLayout.NORTH);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 1));
-		
+//		建立頁面切換按鍵並插入範圍
 		JButton btnNewButton_1 = new JButton("各桌明細");
-		btnNewButton_1.setFont(new Font("微軟正黑體", Font.BOLD, 12));
-		btnNewButton_1.setPreferredSize(new Dimension(90, 23));
+		btnNewButton_1.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		btnNewButton_1.setPreferredSize(new Dimension(90, 38));
 		btnNewButton_1.setAlignmentX(Component.CENTER_ALIGNMENT);
-		JButton btnNewButton = new JButton("點餐");		
-		btnNewButton.setFont(new Font("微軟正黑體", Font.BOLD, 12));
-		btnNewButton.setPreferredSize(new Dimension(90, 23));
+		JButton btnNewButton = new JButton("點餐");
+		btnNewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		btnNewButton.setHorizontalTextPosition(SwingConstants.CENTER);
+		btnNewButton.setFont(new Font("微軟正黑體", Font.BOLD, 16));
+		btnNewButton.setPreferredSize(new Dimension(90, 38));
 		btnNewButton_1.addActionListener(this);
 		btnNewButton.addActionListener(this);
 		panel_1.add(btnNewButton);panel_1.add(btnNewButton_1);
 		
-		
-//		------上方分頁
-//		中間區域------
+//		設定內容切換頁面CardLayout基礎頁
 		crd = new CardLayout();
 		panel_3 = new JPanel();
 		panel_3.setPreferredSize(new Dimension(32767, 32767));
 		panel_3.setMinimumSize(new Dimension(500, 550));
 		panel.add(panel_3);
 		panel_3.setLayout(crd);
-		
+//		CardLayout第一顯示頁面設定
 		panel_52 = new JPanel();
 		panel_52.setSize(new Dimension(532, 532));
 		panel_3.add(panel_52, "1");
 		panel_52.setLayout(new BoxLayout(panel_52, BoxLayout.X_AXIS));
-//		左至右第一區塊------
+//		左至右第一行點餐按鍵Panel_4------
 		panel_4 = new JPanel();
 		panel_52.add(panel_4);
 		panel_4.setLayout(new BoxLayout(panel_4, BoxLayout.Y_AXIS));
-		
+//		拼盤餐點Panel_9範圍設定	
 		panel_9 = new JPanel();
 		panel_4.add(panel_9);
 		panel_9.setLayout(new BoxLayout(panel_9, BoxLayout.Y_AXIS));
-		
+//		Panel_9拼盤標籤範圍
 		panel_18 = new JPanel();
 		panel_18.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_9.add(panel_18);
 		panel_18.setLayout(new BorderLayout(0, 0));
-		
+//		拼盤標籤設定
 		JLabel lblNewLabel = new JLabel("   花樣拼盤");
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.LEFT);
 		lblNewLabel.setFont(new Font("微軟正黑體", Font.BOLD, 20));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_18.add(lblNewLabel);
-		
+//		點餐按鍵設定btnNewButton_6("歐姆蛋拼盤")
 		panel_19 = new JPanel();
 		panel_9.add(panel_19);
 		panel_19.setLayout(new BorderLayout(0, 0));
@@ -160,7 +159,7 @@ public class Menu implements ActionListener {
 		lblNewLabel9.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnNewButton_6.add(lblNewLabel9);
 		panel_19.add(btnNewButton_6, BorderLayout.CENTER);
-		
+//		點餐按鍵設定btnNewButton_7("焦糖奶油法國吐司")
 		panel_20 = new JPanel();
 		panel_9.add(panel_20);
 		panel_20.setLayout(new BorderLayout(0, 0));
@@ -190,7 +189,7 @@ public class Menu implements ActionListener {
 		lblNewLabel10.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_7.add(lblNewLabel10);
 		panel_20.add(btnNewButton_7);
-		
+//		點餐按鍵設定btnNewButton_8("厚切義大利麵")
 		panel_21 = new JPanel();
 		panel_9.add(panel_21);
 		panel_21.setLayout(new BorderLayout(0, 0));
@@ -221,7 +220,7 @@ public class Menu implements ActionListener {
 		lblNewLabel11.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_8.add(lblNewLabel11);
 		panel_21.add(btnNewButton_8);
-		
+//		點餐按鍵設定btnNewButton_9("炸物拼盤"))
 		panel_22 = new JPanel();
 		panel_9.add(panel_22);
 		panel_22.setLayout(new BorderLayout(0, 0));
@@ -251,7 +250,7 @@ public class Menu implements ActionListener {
 		lblNewLabel12.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_9.add(lblNewLabel12);
 		panel_22.add(btnNewButton_9);
-		
+//		點餐按鍵設定btnNewButton_10("明星組合")
 		panel_23 = new JPanel();
 		panel_9.add(panel_23);
 		panel_23.setLayout(new BorderLayout(0, 0));
@@ -281,16 +280,15 @@ public class Menu implements ActionListener {
 		lblNewLabel13.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_10.add(lblNewLabel13);
 		panel_23.add(btnNewButton_10);
-		
+//		小童專屬範圍設定panel_8
 		panel_8 = new JPanel();
 		panel_4.add(panel_8);
 		panel_8.setLayout(new BoxLayout(panel_8, BoxLayout.Y_AXIS));
-//		---左至右第一區塊---		
 		panel_13 = new JPanel();
 		panel_13.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_8.add(panel_13);
 		panel_13.setLayout(new BorderLayout(0, 0));
-		
+//		小童專屬標籤設定
 		JLabel lblNewLabel_1 = new JLabel("   小童專屬");
 		lblNewLabel_1.setFont(new Font("微軟正黑體", Font.BOLD, 20));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -299,7 +297,7 @@ public class Menu implements ActionListener {
 		panel_14 = new JPanel();
 		panel_8.add(panel_14);
 		panel_14.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_11("兒童餐")
 		JButton btnNewButton_11 = new JButton("兒童餐");
 		btnNewButton_11.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -329,7 +327,7 @@ public class Menu implements ActionListener {
 		panel_15 = new JPanel();
 		panel_8.add(panel_15);
 		panel_15.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_12("週一59元特餐")
 		JButton btnNewButton_12 = new JButton("週一59元特餐");
 		btnNewButton_12.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -359,7 +357,7 @@ public class Menu implements ActionListener {
 		panel_16 = new JPanel();
 		panel_8.add(panel_16);
 		panel_16.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_13("週二59元特餐")	
 		JButton btnNewButton_13 = new JButton("週二59元特餐");
 		btnNewButton_13.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -385,11 +383,11 @@ public class Menu implements ActionListener {
 		lblNewLabel16.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_13.add(lblNewLabel16);
 		panel_16.add(btnNewButton_13);
-//		---左至右第一區塊---
+
 		panel_17 = new JPanel();
 		panel_8.add(panel_17);
 		panel_17.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_14("週三59元特餐")
 		JButton btnNewButton_14 = new JButton("週三59元特餐");
 		btnNewButton_14.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -415,15 +413,15 @@ public class Menu implements ActionListener {
 		lblNewLabel17.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_14.add(lblNewLabel17);
 		panel_17.add(btnNewButton_14);
-//		左至右第二區塊------
+//		左至右第二行點餐按鍵Panel_5------
 		panel_5 = new JPanel();
 		panel_52.add(panel_5);
 		panel_5.setLayout(new BoxLayout(panel_5, BoxLayout.Y_AXIS));
-		
+//		蛋餅系列餐點Panel_10範圍設定
 		panel_10 = new JPanel();
 		panel_5.add(panel_10);
 		panel_10.setLayout(new BoxLayout(panel_10, BoxLayout.Y_AXIS));
-		
+//		Panel_24蛋餅標籤範圍
 		panel_24 = new JPanel();
 		panel_24.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_10.add(panel_24);
@@ -433,11 +431,11 @@ public class Menu implements ActionListener {
 		lblNewLabel_2.setFont(new Font("微軟正黑體", Font.BOLD, 20));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_24.add(lblNewLabel_2);
-		
+	
 		panel_25 = new JPanel();
 		panel_10.add(panel_25);
 		panel_25.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_3("手工蛋餅")	
 		JButton btnNewButton_3 = new JButton("手工蛋餅");
 		btnNewButton_3.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -467,7 +465,7 @@ public class Menu implements ActionListener {
 		panel_26 = new JPanel();
 		panel_10.add(panel_26);
 		panel_26.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_4("芋泥蛋餅")		
 		JButton btnNewButton_4 = new JButton("芋泥蛋餅");
 		btnNewButton_4.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -493,11 +491,10 @@ public class Menu implements ActionListener {
 		lblNewLabel19.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_4.add(lblNewLabel19);
 		panel_26.add(btnNewButton_4);
-//		---左至右第二區塊---
 		panel_27 = new JPanel();
 		panel_10.add(panel_27);
 		panel_27.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_15("地瓜蜂蜜蛋餅")	
 		JButton btnNewButton_15 = new JButton("地瓜蜂蜜蛋餅");
 		btnNewButton_15.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -523,16 +520,16 @@ public class Menu implements ActionListener {
 		lblNewLabel20.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_15.add(lblNewLabel20);
 		panel_27.add(btnNewButton_15);
-		
+//		老師傅蘿蔔糕餐點Panel_11範圍設定
 		panel_11 = new JPanel();
 		panel_5.add(panel_11);
 		panel_11.setLayout(new BoxLayout(panel_11, BoxLayout.Y_AXIS));
-		
+//		Panel_28老師傅蘿蔔糕標籤範圍
 		panel_28 = new JPanel();
 		panel_28.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_11.add(panel_28);
 		panel_28.setLayout(new BorderLayout(0, 0));
-		
+//		Panel_28蛋餅標籤設定
 		JLabel lblNewLabel_3 = new JLabel("   老師傅蘿蔔糕");
 		lblNewLabel_3.setFont(new Font("微軟正黑體", Font.BOLD, 20));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.LEFT);
@@ -541,7 +538,7 @@ public class Menu implements ActionListener {
 		panel_33 = new JPanel();
 		panel_11.add(panel_33);
 		panel_33.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_16("原味蘿蔔糕")
 		JButton btnNewButton_16 = new JButton("原味蘿蔔糕");
 		btnNewButton_16.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -572,7 +569,7 @@ public class Menu implements ActionListener {
 		panel_34 = new JPanel();
 		panel_11.add(panel_34);
 		panel_34.setLayout(new BorderLayout(0, 0));
-//		---左至右第二區塊---
+//		點餐按鍵設定btnNewButton_17("肉鬆蘿蔔糕")
 		JButton btnNewButton_17 = new JButton("肉鬆蘿蔔糕");
 		btnNewButton_17.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -602,7 +599,7 @@ public class Menu implements ActionListener {
 		panel_35 = new JPanel();
 		panel_11.add(panel_35);
 		panel_35.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_19("金沙鹹蛋蘿蔔糕")
 		JButton btnNewButton_19 = new JButton("金沙鹹蛋蘿蔔糕");
 		btnNewButton_19.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -628,16 +625,16 @@ public class Menu implements ActionListener {
 		lblNewLabel23.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_19.add(lblNewLabel23);
 		panel_35.add(btnNewButton_19);
-		
+//		甜吐司/厚片餐點Panel_12範圍設定
 		panel_12 = new JPanel();
 		panel_5.add(panel_12);
 		panel_12.setLayout(new BoxLayout(panel_12, BoxLayout.Y_AXIS));
-		
+//		Panel_29甜吐司/厚片標籤範圍設定
 		panel_29 = new JPanel();
 		panel_29.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_12.add(panel_29);
 		panel_29.setLayout(new BorderLayout(0, 0));
-		
+//		Panel_29甜吐司/厚片標籤設定		
 		JLabel lblNewLabel_4 = new JLabel("   甜吐司/厚片");
 		lblNewLabel_4.setFont(new Font("微軟正黑體", Font.BOLD, 20));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.LEFT);
@@ -646,7 +643,7 @@ public class Menu implements ActionListener {
 		panel_30 = new JPanel();
 		panel_12.add(panel_30);
 		panel_30.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_20("吐司薄片")
 		JButton btnNewButton_20 = new JButton("吐司薄片");
 		btnNewButton_20.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -672,11 +669,11 @@ public class Menu implements ActionListener {
 		lblNewLabel24.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_20.add(lblNewLabel24);
 		panel_30.add(btnNewButton_20);
-//		---左至右第二區塊---
+
 		panel_31 = new JPanel();
 		panel_12.add(panel_31);
 		panel_31.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_22("方塊厚片")
 		JButton btnNewButton_22 = new JButton("方塊厚片");
 		btnNewButton_22.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -706,7 +703,7 @@ public class Menu implements ActionListener {
 		panel_32 = new JPanel();
 		panel_12.add(panel_32);
 		panel_32.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_23("山形厚片")
 		JButton btnNewButton_23 = new JButton("山形厚片");
 		btnNewButton_23.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -732,24 +729,25 @@ public class Menu implements ActionListener {
 		lblNewLabel26.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_23.add(lblNewLabel26);
 		panel_32.add(btnNewButton_23);
-//		左至右第三區塊------		
+//		左至右第三行點餐按鍵Panel_6------
 		panel_6 = new JPanel();
 		panel_52.add(panel_6);
 		panel_6.setLayout(new BoxLayout(panel_6, BoxLayout.Y_AXIS));
-		
+//		經典飲品餐點Panel_36標籤範圍設定
 		panel_36 = new JPanel();
 		panel_36.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_6.add(panel_36);
 		panel_36.setLayout(new BorderLayout(0, 0));
-		
+//		經典飲品餐點Panel_36標籤設定
 		JLabel lblNewLabel_5 = new JLabel("   經典飲品");
 		lblNewLabel_5.setFont(new Font("微軟正黑體", Font.BOLD, 20));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_36.add(lblNewLabel_5);
-		
+
 		panel_37 = new JPanel();
 		panel_6.add(panel_37);
 		panel_37.setLayout(new BorderLayout(0, 0));
+//		點餐按鍵設定btnNewButton_5("紅茶")
 		JButton btnNewButton_5 = new JButton("紅茶");
 		btnNewButton_5.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -779,7 +777,7 @@ public class Menu implements ActionListener {
 		panel_38 = new JPanel();
 		panel_6.add(panel_38);
 		panel_38.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_5("奶茶")
 		JButton btnNewButton_18 = new JButton("奶茶");
 		btnNewButton_18.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -809,7 +807,7 @@ public class Menu implements ActionListener {
 		panel_39 = new JPanel();
 		panel_6.add(panel_39);
 		panel_39.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_21("豆漿")
 		JButton btnNewButton_21 = new JButton("豆漿");
 		btnNewButton_21.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -839,7 +837,7 @@ public class Menu implements ActionListener {
 		panel_40 = new JPanel();
 		panel_6.add(panel_40);
 		panel_40.setLayout(new BorderLayout(0, 0));
-//		---左至右第三區塊---
+//		點餐按鍵設定btnNewButton_24("鮮奶茶")
 		JButton btnNewButton_24 = new JButton("鮮奶茶");
 		btnNewButton_24.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -870,7 +868,7 @@ public class Menu implements ActionListener {
 		panel_41 = new JPanel();
 		panel_6.add(panel_41);
 		panel_41.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_25("柳橙汁")
 		JButton btnNewButton_25 = new JButton("柳橙汁");
 		btnNewButton_25.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -900,7 +898,7 @@ public class Menu implements ActionListener {
 		panel_42 = new JPanel();
 		panel_6.add(panel_42);
 		panel_42.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_26("豆漿紅茶")
 		JButton btnNewButton_26 = new JButton("豆漿紅茶");
 		btnNewButton_26.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -930,7 +928,7 @@ public class Menu implements ActionListener {
 		panel_43 = new JPanel();
 		panel_6.add(panel_43);
 		panel_43.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_27("寶貝純鮮奶")
 		JButton btnNewButton_27 = new JButton("寶貝純鮮奶");
 		btnNewButton_27.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -956,11 +954,11 @@ public class Menu implements ActionListener {
 		lblNewLabel33.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_27.add(lblNewLabel33);
 		panel_43.add(btnNewButton_27, BorderLayout.CENTER);
-//		---左至右第三區塊---
+
 		panel_44 = new JPanel();
 		panel_6.add(panel_44);
 		panel_44.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_28("無糖冷泡茶")
 		JButton btnNewButton_28 = new JButton("無糖冷泡茶");
 		btnNewButton_28.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -990,7 +988,7 @@ public class Menu implements ActionListener {
 		panel_45 = new JPanel();
 		panel_6.add(panel_45);
 		panel_45.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_29("柚子釀蜜茶")
 		JButton btnNewButton_29 = new JButton("柚子釀蜜茶");
 		btnNewButton_29.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -1020,7 +1018,7 @@ public class Menu implements ActionListener {
 		panel_46 = new JPanel();
 		panel_6.add(panel_46);
 		panel_46.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_30("桂花釀蜜茶")
 		JButton btnNewButton_30 = new JButton("桂花釀蜜茶");
 		btnNewButton_30.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -1046,11 +1044,11 @@ public class Menu implements ActionListener {
 		lblNewLabel36.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_30.add(lblNewLabel36);
 		panel_46.add(btnNewButton_30, BorderLayout.CENTER);
-//		---左至右第三區塊---
+
 		panel_47 = new JPanel();
 		panel_6.add(panel_47);
 		panel_47.setLayout(new BorderLayout(0, 0));
-		
+//		點餐按鍵設定btnNewButton_31("冰塊加購"))
 		JButton btnNewButton_31 = new JButton("冰塊加購");
 		btnNewButton_31.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
@@ -1077,18 +1075,18 @@ public class Menu implements ActionListener {
 		lblNewLabel37.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		btnNewButton_31.add(lblNewLabel37);
 		panel_47.add(btnNewButton_31, BorderLayout.CENTER);
-//		點參暫存、明細區塊
+//		點參暫存、明細區塊panel_7範圍設定加入CardLayout第一顯示頁面
 		panel_7 = new JPanel();
 		panel_7.setPreferredSize(new Dimension(200, 550));
 		panel_52.add(panel_7);
 		panel_7.setLayout(new BoxLayout(panel_7, BoxLayout.Y_AXIS));
-//		建立明細panel_7加入
+//		建立明細加入panel_7
 		panel_50 = new JPanel();
 		panel_50.setBounds(new Rectangle(0, 0, 200, 38));
 		panel_7.add(panel_50);
 		panel_50.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_50.setLayout(new BoxLayout(panel_50, BoxLayout.Y_AXIS));
-		
+//		店內點單標籤設定
 		JLabel lblNewLabel_6 = new JLabel("店內點單");
 		lblNewLabel_6.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblNewLabel_6.setFont(new Font("微軟正黑體", Font.BOLD, 16));
@@ -1103,7 +1101,7 @@ public class Menu implements ActionListener {
 		panel_49.setSize(new Dimension(200, 38));
 		panel_7.add(panel_49);
 		panel_49.setLayout(new BoxLayout(panel_49, BoxLayout.X_AXIS));
-		
+//		服務費標籤設定
 		JLabel lblNewLabel_7 = new JLabel("  服務費10% : ");
 		lblNewLabel_7.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_7.setHorizontalTextPosition(SwingConstants.LEFT);
@@ -1116,7 +1114,7 @@ public class Menu implements ActionListener {
 		lblNewLabel_8.setHorizontalTextPosition(SwingConstants.RIGHT);
 		lblNewLabel_8.setFont(new Font("微軟正黑體", Font.BOLD, 16));
 		panel_49.add(lblNewLabel_8);
-		
+//		明細表內部table設定
 		def = new DefaultTableModel();		
 		def.addColumn("菜名");
     	def.addColumn("數量");
@@ -1126,7 +1124,7 @@ public class Menu implements ActionListener {
 		table.setRowHeight(30);
 		table.setIntercellSpacing(new Dimension(0, 0));
 		table.setFont(new Font("新細明體", Font.PLAIN, 12));
-							
+//		明細頁面滾軸jScrollpane_1範圍設定		
 		JScrollPane jScrollPane_1 = new JScrollPane(table);
         jScrollPane_1.setBounds(new Rectangle(0, 77, 200, 380));
         jScrollPane_1.getViewport().setOpaque(false);	
@@ -1136,13 +1134,13 @@ public class Menu implements ActionListener {
         
         panel_7.add(jScrollPane_1);
 		panel_7.setLayout(null);
-				
+//		小計panel_48範圍設定
 		panel_48 = new JPanel();
 		panel_48.setSize(new Dimension(200, 40));
 		panel_48.setLocation(new Point(0, 458));
 		panel_7.add(panel_48);
 		panel_48.setLayout(null);
-		
+//		小計標籤設定		
 		JLabel lblNewLabel_28 = new JLabel("  小計 :");
 		lblNewLabel_28.setBounds(0, 11, 38, 18);
 		lblNewLabel_28.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -1150,24 +1148,25 @@ public class Menu implements ActionListener {
 		lblNewLabel_28.setHorizontalTextPosition(SwingConstants.LEFT);
 		lblNewLabel_28.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_48.add(lblNewLabel_28);
-		
+//		小計金額標籤設定
 		lblNewLabel_9 = new JLabel(" 0");
-		lblNewLabel_9.setBounds(70, 11, 28, 18);
-		lblNewLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_9.setBounds(39, 11, 59, 18);
+		lblNewLabel_9.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel_9.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNewLabel_9.setFont(new Font("微軟正黑體", Font.BOLD, 12));
 		panel_48.add(lblNewLabel_9);
-		
+//		總計標籤設定
 		JLabel lblNewLabel_11 = new JLabel("   總計 :");
-		lblNewLabel_11.setBounds(103, 15, 49, 15);
+		lblNewLabel_11.setFont(new Font("微軟正黑體", Font.BOLD, 13));
+		lblNewLabel_11.setBounds(103, 11, 49, 19);
 		panel_48.add(lblNewLabel_11);
-		
+//		總計金額標籤設定
 		lblNewLabel_12 = new JLabel("0");
-		lblNewLabel_12.setBounds(152, 15, 38, 15);
+		lblNewLabel_12.setBounds(141, 15, 49, 15);
 		lblNewLabel_12.setToolTipText("");
 		lblNewLabel_12.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_48.add(lblNewLabel_12);
-		
+//		數量變更按鍵spinner設定
 		spinner = new JSpinner();
 		spinner.setModel(new SpinnerNumberModel(Integer.valueOf(1), null, null, Integer.valueOf(1)));
 		spinner.setFont(new Font("微軟正黑體", Font.PLAIN, 20));
@@ -1179,8 +1178,9 @@ public class Menu implements ActionListener {
 		panel_2.setBounds(new Rectangle(0, 540, 200, 110));
 		panel_7.add(panel_2);
 		panel_2.setLayout(new BoxLayout(panel_2, BoxLayout.Y_AXIS));
-		
+//		刪除按鍵新增及監聽
 		JButton btnNewButton_32 = new JButton("刪除");
+		btnNewButton_32.setFont(new Font("微軟正黑體", Font.BOLD, 18));
 		btnNewButton_32.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -1204,67 +1204,83 @@ public class Menu implements ActionListener {
 				
 			}
 		});
+//		刪除按鍵位置設定
 		btnNewButton_32.setMaximumSize(new Dimension(200, 40));
 		panel_2.add(btnNewButton_32);
-		
-//		開始
+//		結帳按鍵新增及監聽
 		JButton btnNewButton_2 = new JButton("結帳");
 		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {				
+			public void actionPerformed(ActionEvent e) {
+				
+				
 				int rowCount = def.getRowCount();
 				int columnCount = def.getColumnCount();
-
-				// 如果 def_ta1 表格行數為零，則將 def 中的數據添加到 def_ta1
+//				def.getDataVector();
+				
+//				int rowCount = def_ta1.getRowCount();
+//			    判斷各桌明細表若為空格代入列及欄(一號桌)
 				if (def_ta1.getRowCount() == 0) {
-				    for (int row = 0; row < rowCount; row++) {
-				        Vector<Object> rowData = new Vector<>();
-				        for (int column = 0; column < columnCount; column++) {
-				            Object value = def.getValueAt(row, column);
-				            rowData.add(value);
-				        }
-				        def_ta1.addRow(rowData);
-				    }
+
+					for (int row = 0; row < rowCount; row++) {
+					    Vector<Object> rowData = new Vector<>();
+					    for (int column = 0; column < columnCount; column++) {
+					        Object value = def.getValueAt(row, column);
+					        rowData.add(value);
+					    }
+					    def_ta1.addRow(rowData);
+
+					}
+					
 				} 
+//			    判斷各桌明細表若為空格代入列及欄(二號桌)
 				else if(def_ta2.getRowCount() == 0) {
-				    for (int row = 0; row < rowCount; row++) {
-				        Vector<Object> rowData = new Vector<>();
-				        for (int column = 0; column < columnCount; column++) {
-				            Object value = def.getValueAt(row, column);
-				            rowData.add(value);
-				        }
-				        def_ta2.addRow(rowData);
-				    }
+
+					for (int row = 0; row < rowCount; row++) {
+					    Vector<Object> rowData = new Vector<>();
+					    for (int column = 0; column < columnCount; column++) {
+					        Object value = def.getValueAt(row, column);
+					        rowData.add(value);
+					    }
+					    def_ta2.addRow(rowData);
+					}
+					
 				}
+//			    判斷各桌明細表若為空格代入列及欄(三號桌)
 				else if(def_ta3.getRowCount() == 0) {
-				    for (int row = 0; row < rowCount; row++) {
-				        Vector<Object> rowData = new Vector<>();
-				        for (int column = 0; column < columnCount; column++) {
-				            Object value = def.getValueAt(row, column);
-				            rowData.add(value);
-				        }
-				        def_ta3.addRow(rowData);
-				    }
+
+					for (int row = 0; row < rowCount; row++) {
+					    Vector<Object> rowData = new Vector<>();
+					    for (int column = 0; column < columnCount; column++) {
+					        Object value = def.getValueAt(row, column);
+					        rowData.add(value);
+					    }
+					    def_ta3.addRow(rowData);
+					}
+					
 				}
+//			    判斷各桌明細表若為空格代入列及欄(四號桌)
 				else if(def_ta4.getRowCount() == 0) {
-				    for (int row = 0; row < rowCount; row++) {
-				        Vector<Object> rowData = new Vector<>();
-				        for (int column = 0; column < columnCount; column++) {
-				            Object value = def.getValueAt(row, column);
-				            rowData.add(value);
-				        }
-				        def_ta4.addRow(rowData);
-				    }
+
+					for (int row = 0; row < rowCount; row++) {
+					    Vector<Object> rowData = new Vector<>();
+					    for (int column = 0; column < columnCount; column++) {
+					        Object value = def.getValueAt(row, column);
+					        rowData.add(value);
+					    }
+					    def_ta4.addRow(rowData);
+					}
+					
 				}
 				else {
-				    JOptionPane.showMessageDialog(null, "已客滿");
+				    // 表格为空
+					JOptionPane.showMessageDialog(null, "已客滿");
 				}
-				
 				try {
 				    // 加載MySQL JDBC驅動程序
-				    Class.forName("com.mysql.cj.jdbc.Driver");
+				    Class.forName("com.mysql.jdbc.Driver");
 
 				    // 建立到MySQL數據庫的連接。連接URL包含數據庫的位置、使用的協議、時間區和字符編碼設置
-				    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&characterEncoding=utf8", "root", "199611");
+				    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&characterEncoding=utf8", "root", "zds123456");
 
 				    // 創建一個用於執行SQL語句的Statement對象
 				    Statement stmt = con.createStatement(); 
@@ -1304,33 +1320,34 @@ public class Menu implements ActionListener {
 				    ex.printStackTrace();
 				} 
 
+				def.setRowCount(0);
+				list_int.clear();
+				
 				int sum = 0;
 				for (int num : list_int) {
 					sum += num;
 				}
-				def.setRowCount(0);
-				list_int.clear();
+				
 				lblNewLabel_9.setText(" " + sum);
 				lblNewLabel_8.setText("" + (int) (Integer.parseInt(lblNewLabel_9.getText().trim()) * 0.1));
+				lblNewLabel_12.setText(""+((int)(Integer.parseInt(lblNewLabel_9.getText().trim()))+(int)(Integer.parseInt(lblNewLabel_8.getText().trim()))));
+				
 			}
 		});
+//		結帳按鍵字體及位置設定
 		btnNewButton_2.setMaximumSize(new Dimension(200, 75));
-		btnNewButton_2.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
+		btnNewButton_2.setFont(new Font("微軟正黑體", Font.BOLD, 18));
 		panel_2.add(btnNewButton_2);
-		
-//    結束
-
-		
 		
 		panel_51 = new JPanel();
 		panel_51.setBounds(new Rectangle(0, 500, 100, 40));
 		panel_7.add(panel_51);
 		panel_51.setLayout(new BoxLayout(panel_51, BoxLayout.X_AXIS));
-		
+//		spinner 註解label
 		JLabel lblNewLabel_10 = new JLabel("變更數量 :");
-		lblNewLabel_10.setFont(new Font("微軟正黑體", Font.BOLD, 13));
+		lblNewLabel_10.setFont(new Font("微軟正黑體", Font.BOLD, 18));
 		panel_51.add(lblNewLabel_10);
-		
+//		CardLayout點餐頁面切換按鈕監聽
 		btnNewButton.addActionListener(new ActionListener() {  
 	        public void actionPerformed(ActionEvent e) {       
 	        	
@@ -1340,7 +1357,7 @@ public class Menu implements ActionListener {
 	        }});
 		
 		
-//		---各桌名細分頁---
+//		CardLayout第二顯示頁面(各桌明細)
 		panel_53 = new JPanel();
 		panel_53.setSize(new Dimension(532, 532));
 		panel01 = new JPanel();
@@ -1537,7 +1554,7 @@ public class Menu implements ActionListener {
 
 		
 		
-			
+//		CardLayout各桌明細頁面切換按鈕監聽
         panel_53.add(panel01);
 		panel_3.add(panel_53, "2");
 		btnNewButton_1.addActionListener(new ActionListener() {  
